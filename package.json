@@ -1,0 +1,11 @@
+{
+  "name": "tour-backend",
+  "version": "1.0.0",
+  "description": "Tour Backend api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "naveen",
+  "license": "ISC"
+}
