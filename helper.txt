@@ -1,0 +1,26 @@
+Create model of user schema
+ ex-- user{
+    firstName:String,
+    default:null
+}
+
+// Comments and route to make authentication(Registration)
+
+// get all information
+// check mandatory fields
+// already registered
+// Take care of password
+// genarate token or send success message
+
+//extract token from header
+1.req.header("Authorization).replace("Bearer","");
+2.check token is there or not
+3. if present then decode the token and match token to verify user
+4. jwt.verify(token,process.env.SECRET_KEY)
+/ Protecting the routes
+
+//use middleware
+// check for token presence
+// verify the token
+// extract info from payload 
+//NEXT()
