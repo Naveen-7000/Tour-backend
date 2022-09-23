@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 
-app.get("/", (req, res) => {
+app.get("/home", (req, res) => {
   res.send("Hello auth system");
 });
 /* Route - /register
