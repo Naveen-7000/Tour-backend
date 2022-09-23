@@ -16,6 +16,9 @@ app.use(express.json());
    Type - POST
    DESC - To register new user
 */
+app.use(async ctx=>{
+  ctx.body = "Hello deployment";
+});
 app.post("/register", async (req, res) => {
   try {
     const { fullname, phone, email, password } = req.body;
