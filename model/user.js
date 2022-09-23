@@ -1,11 +1,11 @@
 const moongose = require("mongoose");
 
 const userSchema = new moongose.Schema({
-  firstname: {
+  fullname: {
     type: String,
     default: null,
   },
-  lastname: {
+  phone: {
     type: String,
     default: null,
   },

@@ -1,16 +1,16 @@
 require("dotenv").config();
+require("./config/database").connect();
 const express = require("express");
-const User = require("./model/user");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+
+const User = require("./model/user");
+const auth = require('./middleware/auth');
 
 const app = express();
 // config json
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.status(200).send("Its working");
-});
 
 /* Route - /register
    Type - POST
@@ -18,9 +18,9 @@ app.get("/", (req, res) => {
 */
 app.post("/register", async (req, res) => {
   try {
-    const { firstname, lastname, email, password } = req.body;
+    const { fullname, phone, email, password } = req.body;
     // Check all data is there
-    if (!(email && password && lastname && firstname)) {
+    if (!(email && password && phone && fullname)) {
       res.status(400).send("All fields required");
     }
     // check user already exist
@@ -34,8 +34,8 @@ app.post("/register", async (req, res) => {
     const encryptPassword = await bcrypt.hash(password, 10);
 
     const user = await User.create({
-      firstname,
-      lastname,
+      fullname,
+      phone,
       email: email.toLowerCase(),
       password: encryptPassword,
     });
