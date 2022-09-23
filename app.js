@@ -12,13 +12,14 @@ const app = express();
 app.use(express.json());
 
 
+app.get("/", (req, res) => {
+  res.send("Hello auth system");
+});
 /* Route - /register
    Type - POST
    DESC - To register new user
 */
-app.use(async ctx=>{
-  ctx.body = "Hello deployment";
-});
+
 app.post("/register", async (req, res) => {
   try {
     const { fullname, phone, email, password } = req.body;

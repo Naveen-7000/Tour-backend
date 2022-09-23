@@ -4,7 +4,8 @@
   "description": "Tour Backend api",
   "main": "index.js",
   "scripts": {
-    "start": "index.js"
+    "start": "index.js",
+    "dev": "nodemon index.js"
   },
   "author": "naveen",
   "license": "ISC",
